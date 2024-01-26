@@ -1,0 +1,17 @@
+body{
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.Page3Desktop{
+    background-image: url('../images/background-Page3.png');
+    background-repeat: no-repeat;
+    width: auto;
+    height: auto;
+}
+
+.footer{
+    background-image: url('../images/footer.png');
+    width: auto;
+    height: 100%;
+}
