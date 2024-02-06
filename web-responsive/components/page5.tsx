@@ -126,7 +126,7 @@ function Page5() {
           </Typography>
         </Grid>
 
-        <Box>
+        <Grid>
           <ImageList cols={2} gap={15}>
             <Image src={IMGB1M} alt="Box Image 1" className={styles.imgBox_M} />
             <Image src={IMGB2M} alt="Box Image 2" className={styles.imgBox_M} />
@@ -134,7 +134,7 @@ function Page5() {
             <Image src={IMGB4M} alt="Box Image 4" className={styles.imgBox_M} />
           </ImageList>
 
-          <ImageList cols={2} gap={15}>
+          <ImageList cols={2}  variant="masonry" gap={15}>
             <ImageListItem>
               <Image
                 src={IMGB5M}
@@ -157,7 +157,7 @@ function Page5() {
             </ImageListItem>
           </ImageList>
 
-          <ImageList cols={2} gap={15} sx={{justifyContent: 'space-between'}}>
+          <ImageList cols={2} variant="masonry" gap={15}>
             <ImageListItem>
               <Image
                 src={IMGB8M}
@@ -200,7 +200,7 @@ function Page5() {
               className={styles.imgBox_M}
             />
           </ImageList>
-        </Box>
+        </Grid>
       </Grid>
     </Grid>
   );
