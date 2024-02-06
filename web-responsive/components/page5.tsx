@@ -51,7 +51,7 @@ function Page5() {
           variant="h3"
           className={styles.title5}
           py={"2%"}
-          fontSize={60}
+          fontSize={60} 
           sx={{ display: { lg: "none", xl: "flex" } }}
         >
           Galleries
@@ -134,7 +134,7 @@ function Page5() {
             <Image src={IMGB4M} alt="Box Image 4" className={styles.imgBox_M} />
           </ImageList>
 
-          <ImageList cols={2} variant="masonry" gap={15}>
+          <ImageList cols={2} gap={15}>
             <ImageListItem>
               <Image
                 src={IMGB5M}
@@ -157,7 +157,7 @@ function Page5() {
             </ImageListItem>
           </ImageList>
 
-          <ImageList cols={2} variant="masonry" gap={15}>
+          <ImageList cols={2} gap={15} sx={{justifyContent: 'space-between'}}>
             <ImageListItem>
               <Image
                 src={IMGB8M}
