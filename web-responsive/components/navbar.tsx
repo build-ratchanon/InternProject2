@@ -1,44 +1,42 @@
 import styles from "@/styles/Home.module.css";
 import React from "react";
-import { useState, MouseEvent } from "react";
+import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from '@mui/icons-material/Close';
 import {
+  Box,
   Button,
+  Drawer,
   Grid,
   IconButton,
   Link,
-  Menu,
   MenuItem,
   Typography,
 } from "@mui/material";
 
-import Page1 from "@/components/page1";
-import Page2 from "@/components/page2";
-import Page3 from "@/components/page3";
-
 function NavBar() {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault()
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
-  return (
+  const handleClose = () => {
+    setIsDrawerOpen(false);
+  };
+    return (
     <Grid>
       {/* NavBar Desktop*/}
       <Grid
         className="NavBar"
-        sx={{ height: "100px", px: 6 }}
+        sx={{
+          display: { xs: "none", sm: "flex" },
+          height: 168,
+          px: "100px",
+          pt: "25px",
+        }}
         display={"flex"}
         justifyContent={"space-between"}
         alignItems={"center"}
       >
         <Grid item display={"flex"} justifyContent={"center"}>
-          <Typography variant="h5" className={styles.logo}>
+          <Typography className={styles.logo}>
             Pineapple <br />
             Island
           </Typography>
@@ -46,90 +44,135 @@ function NavBar() {
 
         <Grid
           item
-          sx={{ display: { xs: "none", sm: "flex" } }}
           display={"flex"}
           justifyContent={"center"}
         >
-          <Grid item sx={{ margin: 5 }}>
-            <Link href="#aboutPage" underline="none" className={styles.content}>
-              {'About Us'}
+          <Grid item sx={{ marginX: 6, marginY: 5 }}>
+            <Link
+              href="#aboutPage"
+              underline="none"
+              color={"#000"}
+              className={styles.content}
+            >
+              About Us
             </Link>
           </Grid>
-          <Grid item sx={{ margin: 5 }}>
-            <Link href="#whatWeDoPage" underline="none" className={styles.content}>
-              {'What we do'}
+          <Grid item sx={{ marginX: 6, marginY: 5 }}>
+            <Link
+              href="#whatWeDoPage"
+              underline="none"
+              className={styles.content}
+            >
+              What we do
             </Link>
           </Grid>
-          <Grid item sx={{ margin: 5 }}>
-            <Link href="#projectPage" underline="none" className={styles.content}>
-              {'Project'}
+          <Grid item sx={{ marginX: 6, marginY: 5 }}>
+            <Link
+              href="#projectPage"
+              underline="none"
+              className={styles.content}
+            >
+              Project
             </Link>
           </Grid>
         </Grid>
 
-        <Grid
-          item
-          display={"flex"}
-          justifyContent={"flex-start"}
-          height={"60px"}
-        >
+        <Grid item display={"flex"} justifyContent={"flex-start"}>
           <Button
             variant="contained"
             disableElevation
-            style={{ background: "#0E204E", color: "#FFF" }}
-            sx={{ display: { xs: "none", sm: "flex" }}}
+            sx={{
+              display: { xs: "none", sm: "flex" },
+              height: "50px",
+              width: "188px",
+              borderRadius: 0,
+              background: "#0E204E",
+              color: "#FFF",
+            }}
             href="#inTouchPage"
           >
             Get in touch
           </Button>
         </Grid>
+      </Grid>
 
+      <Box
+        sx={{
+          display: { xs: "flex", sm: "none" },
+          height: "128px",
+          paddingX: 2.5,
+        }}
+        display={"flex"}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+      >
         {/* NavBar Mobile */}
+        <Grid item display={"flex"} justifyContent={"center"}>
+          <Typography color={"#0E204E"} fontFamily={"Playfair Display"} fontSize={20} fontWeight={700} lineHeight={"normal"}>
+            Pineapple <br />
+            Island
+          </Typography>
+        </Grid>
         <Grid sx={{ display: { xs: "flex", sm: "none" } }}>
-          <IconButton 
-            size="large" 
-            edge="start" 
-            color="inherit" 
-            id="basic-button"
-            aria-controls={open ? 'basic-menu' : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? 'true' : undefined}
-            onClick={handleClick}
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="logo"
+            onClick={() => setIsDrawerOpen(true)}            
           >
             <MenuIcon />
           </IconButton>
-          <Menu 
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              'aria-labelledby': 'basic-button',
-            }}
-            transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-            anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-            sx={{ display: { xs: "flex", sm: "none" } }}
+          <Drawer
+            anchor="right"
+            open={isDrawerOpen}
+            onClose={() => setIsDrawerOpen(false)}
           >
-            <MenuItem onClick={handleClose}>
-              <Link href="#aboutPage" underline="none" className={styles.content}>
-                {'About Us'}
-              </Link>
-            </MenuItem>
+            <Box
+              sx={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start', padding: 1}}
+            >
+              <IconButton onClick={handleClose}>
+                <CloseIcon/>
+              </IconButton>
+            </Box>
+            
+            <Box
+              sx={{paddingX: 1.25, display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}
+            >
+                <MenuItem onClick={handleClose}>
+                <Link
+                  href="#aboutPage"
+                  underline="none"
+                  className={styles.content}
+                >
+                  About Us
+                </Link>
+              </MenuItem>
 
-            <MenuItem onClick={handleClose}>
-              <Link href="#whatWeDoPage" underline="none" className={styles.content}>
-                {'What we do'}
-              </Link>
-            </MenuItem>
+              <MenuItem onClick={handleClose}>
+                <Link
+                  href="#whatWeDoPage"
+                  underline="none"
+                  className={styles.content}
+                >
+                  What we do
+                </Link>
+              </MenuItem>
 
-            <MenuItem onClick={handleClose}>
-              <Link href="#projectPage" underline="none" className={styles.content}>
-                {'Project'} 
-              </Link>
-            </MenuItem>
-          </Menu>
+              <MenuItem onClick={handleClose}>
+                <Link
+                  href="#projectPage"
+                  underline="none"
+                  className={styles.content}
+                >
+                  Project
+                </Link>
+              </MenuItem>
+            </Box>
+            
+          </Drawer>
         </Grid>
-      </Grid>
+      </Box>
     </Grid>
   );
 }
