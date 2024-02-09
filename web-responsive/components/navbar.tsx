@@ -13,6 +13,7 @@ import {
   MenuItem,
   Typography,
 } from "@mui/material";
+import Hamburger from "hamburger-react";
 
 function NavBar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
@@ -114,15 +115,8 @@ function NavBar() {
           </Typography>
         </Grid>
         <Grid sx={{ display: { xs: "flex", sm: "none" } }}>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="logo"
-            onClick={() => setIsDrawerOpen(true)}            
-          >
-            <MenuIcon />
-          </IconButton>
+          <Hamburger toggled={isDrawerOpen} toggle={setIsDrawerOpen} size={20}/>
+
           <Drawer
             anchor="right"
             open={isDrawerOpen}
