@@ -21,8 +21,8 @@ function NavBar() {
   };
   return (
     <>
-      {/* NavBar Desktop*/}
       <Container maxWidth={false} sx={{ maxWidth: "1920px" }}>
+        {/* NavBar Desktop*/}
         <Box
           sx={{
             display: { xs: "none", md: "flex" },
@@ -124,10 +124,8 @@ function NavBar() {
             </Button>
           </Box>
         </Box>
-      </Container>
 
-      {/* NavBar Mobile */}
-      <Container>
+        {/* NavBar Mobile */}
         <Box
           sx={{
             display: { xs: "flex", md: "none" },
