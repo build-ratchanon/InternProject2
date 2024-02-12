@@ -129,8 +129,9 @@ function NavBar() {
         <Box
           sx={{
             display: { xs: "flex", md: "none" },
-            height: "128px",
-            paddingX: 2.5,
+            height: "106px",
+            paddingLeft: "5px",
+            paddingTop: "22px",
           }}
           display={"flex"}
           justifyContent={"space-between"}
