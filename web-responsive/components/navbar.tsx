@@ -44,9 +44,10 @@ function NavBar() {
                 fontStyle: "normal",
                 fontWeight: 700,
                 lineHeight: "normal",
+                width: "148px",
               }}
             >
-              Pineapple <br />
+              Pineapple
               Island
             </Typography>
           </Box>
@@ -146,9 +147,10 @@ function NavBar() {
                 fontStyle: "normal",
                 fontWeight: 700,
                 lineHeight: "normal",
+                width: "92px",
               }}
             >
-              Pineapple <br />
+              Pineapple
               Island
             </Typography>
           </Box>
