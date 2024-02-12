@@ -7,7 +7,6 @@ import {
   Button,
   Container,
   Drawer,
-  Grid,
   IconButton,
   Link,
   MenuItem,
@@ -24,63 +23,70 @@ function NavBar() {
   return (
     <>
       {/* NavBar Desktop*/}
-      <Container maxWidth={false} sx={{ maxWidth: "1920px"}}>
-        <Grid
-          className="NavBar"
+      <Container maxWidth={false} sx={{ maxWidth: "1920px" }}>
+        <Box
           sx={{
             display: { xs: "none", md: "flex" },
-            height: 168,
-            px: "100px",
-            pt: "25px",
+            height: 144,
+            pl: "76px",
+            pr: "70px",
+            pt: "24px",
           }}
           display={"flex"}
           justifyContent={"space-between"}
           alignItems={"center"}
         >
-          <Grid item display={"flex"} justifyContent={"center"}>
-            <Typography className={styles.logo}>
+          <Box display={"flex"} justifyContent={"center"}>
+            <Typography
+              sx={{
+                color: "#0E204E",
+                fontFamily: "Playfair Display",
+                fontSize: 32,
+                fontStyle: "normal",
+                fontWeight: 700,
+                lineHeight: "normal",
+              }}
+            >
               Pineapple <br />
               Island
             </Typography>
-          </Grid>
+          </Box>
 
-          <Grid
-            item
+          <Box
             display={"flex"}
             justifyContent={"center"}
             sx={{ display: { sm: "flex" } }}
           >
-            <Grid item sx={{ marginX: 6, marginY: 5 }}>
+            <Box sx={{ marginX: 6, marginY: 5 }}>
               <Link
                 href="#aboutPage"
                 underline="none"
-                color={"#000"}
-                className={styles.content}
+                sx={{color: "#232323", fontFamily: "Manrope", fontSize: 20, fontStyle: "normal", fontWeight: 400, lineHeight: "normal", }}
               >
                 About Us
               </Link>
-            </Grid>
-            <Grid item sx={{ marginX: 6, marginY: 5 }}>
+            </Box>
+            <Box sx={{ marginX: 6, marginY: 5 }}>
               <Link
                 href="#whatWeDoPage"
                 underline="none"
-                className={styles.content}
+                sx={{color: "#232323", fontFamily: "Manrope", fontSize: 20, fontStyle: "normal", fontWeight: 400, lineHeight: "normal", }}
               >
                 What we do
               </Link>
-            </Grid>
-            <Grid item sx={{ marginX: 6, marginY: 5 }}>
+            </Box>
+            <Box sx={{ marginX: 6, marginY: 5 }}>
               <Link
                 href="#projectPage"
                 underline="none"
-                className={styles.content}
+                sx={{color: "#232323", fontFamily: "Manrope", fontSize: 20, fontStyle: "normal", fontWeight: 400, lineHeight: "normal", }}
               >
                 Project
               </Link>
-            </Grid>
-          </Grid>
+            </Box>
+          </Box>
 
-          <Grid item display={"flex"} justifyContent={"flex-start"}>
+          <Box display={"flex"} justifyContent={"flex-start"}>
             <Button
               variant="contained"
               disableElevation
@@ -95,12 +101,12 @@ function NavBar() {
             >
               Get in touch
             </Button>
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
       </Container>
 
       {/* NavBar Mobile */}
-      <Container maxWidth={false} sx={{ maxWidth: "600px"}}>
+      <Container>
         <Box
           sx={{
             display: { xs: "flex", md: "none" },
@@ -111,19 +117,22 @@ function NavBar() {
           justifyContent={"space-between"}
           alignItems={"center"}
         >
-          <Grid item display={"flex"} justifyContent={"center"}>
+          <Box display={"flex"} justifyContent={"center"}>
             <Typography
-              color={"#0E204E"}
-              fontFamily={"Playfair Display"}
-              fontSize={20}
-              fontWeight={700}
-              lineHeight={"normal"}
+              sx={{
+                color: "#0E204E",
+                fontFamily: "Playfair Display",
+                fontSize: 20,
+                fontStyle: "normal",
+                fontWeight: 700,
+                lineHeight: "normal",
+              }}
             >
               Pineapple <br />
               Island
             </Typography>
-          </Grid>
-          <Grid>
+          </Box>
+          <Box>
             <Hamburger
               toggled={isDrawerOpen}
               toggle={setIsDrawerOpen}
@@ -160,7 +169,7 @@ function NavBar() {
                   <Link
                     href="#aboutPage"
                     underline="none"
-                    className={styles.content}
+                    sx={{color: "#232323", fontFamily: "Manrope", fontSize: 20, fontStyle: "normal", fontWeight: 400, lineHeight: "normal", }}
                   >
                     About Us
                   </Link>
@@ -170,7 +179,7 @@ function NavBar() {
                   <Link
                     href="#whatWeDoPage"
                     underline="none"
-                    className={styles.content}
+                    sx={{color: "#232323", fontFamily: "Manrope", fontSize: 20, fontStyle: "normal", fontWeight: 400, lineHeight: "normal", }}
                   >
                     What we do
                   </Link>
@@ -180,14 +189,14 @@ function NavBar() {
                   <Link
                     href="#projectPage"
                     underline="none"
-                    className={styles.content}
+                    sx={{color: "#232323", fontFamily: "Manrope", fontSize: 20, fontStyle: "normal", fontWeight: 400, lineHeight: "normal", }}
                   >
                     Project
                   </Link>
                 </MenuItem>
               </Box>
             </Drawer>
-          </Grid>
+          </Box>
         </Box>
       </Container>
     </>
