@@ -1,4 +1,3 @@
-import styles from "@/styles/Home.module.css";
 import React from "react";
 import { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
@@ -55,13 +54,21 @@ function NavBar() {
           <Box
             display={"flex"}
             justifyContent={"center"}
+            alignItems={"center"}
             sx={{ display: { sm: "flex" } }}
           >
             <Box sx={{ marginX: 6, marginY: 5 }}>
               <Link
                 href="#aboutPage"
                 underline="none"
-                sx={{color: "#232323", fontFamily: "Manrope", fontSize: 20, fontStyle: "normal", fontWeight: 400, lineHeight: "normal", }}
+                sx={{
+                  color: "#232323",
+                  fontFamily: "Manrope",
+                  fontSize: 20,
+                  fontStyle: "normal",
+                  fontWeight: 400,
+                  lineHeight: "normal",
+                }}
               >
                 About Us
               </Link>
@@ -70,7 +77,14 @@ function NavBar() {
               <Link
                 href="#whatWeDoPage"
                 underline="none"
-                sx={{color: "#232323", fontFamily: "Manrope", fontSize: 20, fontStyle: "normal", fontWeight: 400, lineHeight: "normal", }}
+                sx={{
+                  color: "#232323",
+                  fontFamily: "Manrope",
+                  fontSize: 20,
+                  fontStyle: "normal",
+                  fontWeight: 400,
+                  lineHeight: "normal",
+                }}
               >
                 What we do
               </Link>
@@ -79,7 +93,14 @@ function NavBar() {
               <Link
                 href="#projectPage"
                 underline="none"
-                sx={{color: "#232323", fontFamily: "Manrope", fontSize: 20, fontStyle: "normal", fontWeight: 400, lineHeight: "normal", }}
+                sx={{
+                  color: "#232323",
+                  fontFamily: "Manrope",
+                  fontSize: 20,
+                  fontStyle: "normal",
+                  fontWeight: 400,
+                  lineHeight: "normal",
+                }}
               >
                 Project
               </Link>
@@ -169,7 +190,14 @@ function NavBar() {
                   <Link
                     href="#aboutPage"
                     underline="none"
-                    sx={{color: "#232323", fontFamily: "Manrope", fontSize: 20, fontStyle: "normal", fontWeight: 400, lineHeight: "normal", }}
+                    sx={{
+                      color: "#232323",
+                      fontFamily: "Manrope",
+                      fontSize: 20,
+                      fontStyle: "normal",
+                      fontWeight: 400,
+                      lineHeight: "normal",
+                    }}
                   >
                     About Us
                   </Link>
@@ -179,7 +207,14 @@ function NavBar() {
                   <Link
                     href="#whatWeDoPage"
                     underline="none"
-                    sx={{color: "#232323", fontFamily: "Manrope", fontSize: 20, fontStyle: "normal", fontWeight: 400, lineHeight: "normal", }}
+                    sx={{
+                      color: "#232323",
+                      fontFamily: "Manrope",
+                      fontSize: 20,
+                      fontStyle: "normal",
+                      fontWeight: 400,
+                      lineHeight: "normal",
+                    }}
                   >
                     What we do
                   </Link>
@@ -189,7 +224,14 @@ function NavBar() {
                   <Link
                     href="#projectPage"
                     underline="none"
-                    sx={{color: "#232323", fontFamily: "Manrope", fontSize: 20, fontStyle: "normal", fontWeight: 400, lineHeight: "normal", }}
+                    sx={{
+                      color: "#232323",
+                      fontFamily: "Manrope",
+                      fontSize: 20,
+                      fontStyle: "normal",
+                      fontWeight: 400,
+                      lineHeight: "normal",
+                    }}
                   >
                     Project
                   </Link>
