@@ -5,7 +5,7 @@
 .logo{
   color: #0E204E;
     font-family: "Playfair Display";
-    /* font-size: 20px; */
+    font-size: 32px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -20,7 +20,7 @@
 .content{
   color: #232323;
   font-family: Manrope;
-  font-size: 15px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;

@@ -1,136 +1,247 @@
-import styles from "@/styles/Home.module.css";
 import React from "react";
-import { useState, MouseEvent } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
+import { useState } from "react";
+import CloseIcon from "@mui/icons-material/Close";
 import {
+  Box,
   Button,
-  Grid,
+  Container,
+  Drawer,
   IconButton,
   Link,
-  Menu,
   MenuItem,
   Typography,
 } from "@mui/material";
-
-import Page1 from "@/components/page1";
-import Page2 from "@/components/page2";
-import Page3 from "@/components/page3";
+import Hamburger from "hamburger-react";
 
 function NavBar() {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault()
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   return (
-    <Grid>
-      {/* NavBar Desktop*/}
-      <Grid
-        className="NavBar"
-        sx={{ height: "100px", px: 6 }}
-        display={"flex"}
-        justifyContent={"space-between"}
-        alignItems={"center"}
-      >
-        <Grid item display={"flex"} justifyContent={"center"}>
-          <Typography variant="h5" className={styles.logo}>
-            Pineapple <br />
-            Island
-          </Typography>
-        </Grid>
-
-        <Grid
-          item
-          sx={{ display: { xs: "none", sm: "flex" } }}
-          display={"flex"}
-          justifyContent={"center"}
+    <>
+      <Container maxWidth={false} sx={{ maxWidth: "1920px" }}>
+        {/* NavBar Desktop*/}
+        <Box
+          sx={{
+            display: { xs: "none", md: "flex" },
+            height: 144,
+            pl: "76px",
+            pr: "70px",
+            pt: "24px",
+          }}
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
         >
-          <Grid item sx={{ margin: 5 }}>
-            <Link href="#aboutPage" underline="none" className={styles.content}>
-              {'About Us'}
-            </Link>
-          </Grid>
-          <Grid item sx={{ margin: 5 }}>
-            <Link href="#whatWeDoPage" underline="none" className={styles.content}>
-              {'What we do'}
-            </Link>
-          </Grid>
-          <Grid item sx={{ margin: 5 }}>
-            <Link href="#projectPage" underline="none" className={styles.content}>
-              {'Project'}
-            </Link>
-          </Grid>
-        </Grid>
+          <Box display="flex" justifyContent="center">
+            <Typography
+              sx={{
+                color: "#0E204E",
+                fontFamily: "Playfair Display",
+                fontSize: 32,
+                fontStyle: "normal",
+                fontWeight: 700,
+                lineHeight: "normal",
+                width: "148px",
+              }}
+            >
+              Pineapple
+              Island
+            </Typography>
+          </Box>
 
-        <Grid
-          item
-          display={"flex"}
-          justifyContent={"flex-start"}
-          height={"60px"}
-        >
-          <Button
-            variant="contained"
-            disableElevation
-            style={{ background: "#0E204E", color: "#FFF" }}
-            sx={{ display: { xs: "none", sm: "flex" }}}
-            href="#inTouchPage"
+          <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            sx={{ display: { sm: "flex" } }}
           >
-            Get in touch
-          </Button>
-        </Grid>
+            <Box sx={{ marginX: 6, marginY: 5 }}>
+              <Link
+                href="#aboutPage"
+                underline="none"
+                sx={{
+                  color: "#232323",
+                  fontFamily: "Manrope",
+                  fontSize: 20,
+                  fontStyle: "normal",
+                  fontWeight: 400,
+                  lineHeight: "normal",
+                }}
+              >
+                About Us
+              </Link>
+            </Box>
+            <Box sx={{ marginX: 6, marginY: 5 }}>
+              <Link
+                href="#whatWeDoPage"
+                underline="none"
+                sx={{
+                  color: "#232323",
+                  fontFamily: "Manrope",
+                  fontSize: 20,
+                  fontStyle: "normal",
+                  fontWeight: 400,
+                  lineHeight: "normal",
+                }}
+              >
+                What we do
+              </Link>
+            </Box>
+            <Box sx={{ marginX: 6, marginY: 5 }}>
+              <Link
+                href="#projectPage"
+                underline="none"
+                sx={{
+                  color: "#232323",
+                  fontFamily: "Manrope",
+                  fontSize: 20,
+                  fontStyle: "normal",
+                  fontWeight: 400,
+                  lineHeight: "normal",
+                }}
+              >
+                Project
+              </Link>
+            </Box>
+          </Box>
+
+          <Box display="flex" justifyContent="flex-start">
+            <Button
+              variant="contained"
+              disableElevation
+              sx={{
+                height: "50px",
+                width: "188px",
+                borderRadius: 0,
+                background: "#0E204E",
+                color: "#FFF",
+              }}
+              href="#inTouchPage"
+            >
+              Get in touch
+            </Button>
+          </Box>
+        </Box>
 
         {/* NavBar Mobile */}
-        <Grid sx={{ display: { xs: "flex", sm: "none" } }}>
-          <IconButton 
-            size="large" 
-            edge="start" 
-            color="inherit" 
-            id="basic-button"
-            aria-controls={open ? 'basic-menu' : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? 'true' : undefined}
-            onClick={handleClick}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Menu 
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              'aria-labelledby': 'basic-button',
-            }}
-            transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-            anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-            sx={{ display: { xs: "flex", sm: "none" } }}
-          >
-            <MenuItem onClick={handleClose}>
-              <Link href="#aboutPage" underline="none" className={styles.content}>
-                {'About Us'}
-              </Link>
-            </MenuItem>
+        <Box
+          sx={{
+            display: { xs: "flex", md: "none" },
+            height: "106px",
+            paddingLeft: "5px",
+            paddingTop: "22px",
+          }}
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          <Box display="flex" justifyContent="center">
+            <Typography
+              sx={{
+                color: "#0E204E",
+                fontFamily: "Playfair Display",
+                fontSize: 20,
+                fontStyle: "normal",
+                fontWeight: 700,
+                lineHeight: "normal",
+                width: "92px",
+              }}
+            >
+              Pineapple
+              Island
+            </Typography>
+          </Box>
+          <Box>
+            <Hamburger
+              toggled={isDrawerOpen}
+              toggle={setIsDrawerOpen}
+              size={20}
+            />
 
-            <MenuItem onClick={handleClose}>
-              <Link href="#whatWeDoPage" underline="none" className={styles.content}>
-                {'What we do'}
-              </Link>
-            </MenuItem>
+            <Drawer
+              anchor="right"
+              open={isDrawerOpen}
+              onClose={() => setIsDrawerOpen(false)}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "flex-start",
+                  padding: 1,
+                }}
+              >
+                <IconButton onClick={() => setIsDrawerOpen(false)}>
+                  <CloseIcon />
+                </IconButton>
+              </Box>
 
-            <MenuItem onClick={handleClose}>
-              <Link href="#projectPage" underline="none" className={styles.content}>
-                {'Project'} 
-              </Link>
-            </MenuItem>
-          </Menu>
-        </Grid>
-      </Grid>
-    </Grid>
+              <Box
+                sx={{
+                  paddingX: 1.25,
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-end",
+                }}
+              >
+                <MenuItem onClick={() => setIsDrawerOpen(false)}>
+                  <Link
+                    href="#aboutPage"
+                    underline="none"
+                    sx={{
+                      color: "#232323",
+                      fontFamily: "Manrope",
+                      fontSize: 20,
+                      fontStyle: "normal",
+                      fontWeight: 400,
+                      lineHeight: "normal",
+                    }}
+                  >
+                    About Us
+                  </Link>
+                </MenuItem>
+
+                <MenuItem onClick={() => setIsDrawerOpen(false)}>
+                  <Link
+                    href="#whatWeDoPage"
+                    underline="none"
+                    sx={{
+                      color: "#232323",
+                      fontFamily: "Manrope",
+                      fontSize: 20,
+                      fontStyle: "normal",
+                      fontWeight: 400,
+                      lineHeight: "normal",
+                    }}
+                  >
+                    What we do
+                  </Link>
+                </MenuItem>
+
+                <MenuItem onClick={() => setIsDrawerOpen(false)}>
+                  <Link
+                    href="#projectPage"
+                    underline="none"
+                    sx={{
+                      color: "#232323",
+                      fontFamily: "Manrope",
+                      fontSize: 20,
+                      fontStyle: "normal",
+                      fontWeight: 400,
+                      lineHeight: "normal",
+                    }}
+                  >
+                    Project
+                  </Link>
+                </MenuItem>
+
+
+              </Box>
+            </Drawer>
+          </Box>
+        </Box>
+      </Container>
+    </>
   );
 }
 
