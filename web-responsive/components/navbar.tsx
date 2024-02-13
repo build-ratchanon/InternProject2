@@ -16,9 +16,6 @@ import Hamburger from "hamburger-react";
 function NavBar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  const handleClose = () => {
-    setIsDrawerOpen(false);
-  };
   return (
     <>
       <Container maxWidth={false} sx={{ maxWidth: "1920px" }}>
@@ -31,11 +28,11 @@ function NavBar() {
             pr: "70px",
             pt: "24px",
           }}
-          display={"flex"}
-          justifyContent={"space-between"}
-          alignItems={"center"}
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
         >
-          <Box display={"flex"} justifyContent={"center"}>
+          <Box display="flex" justifyContent="center">
             <Typography
               sx={{
                 color: "#0E204E",
@@ -53,9 +50,9 @@ function NavBar() {
           </Box>
 
           <Box
-            display={"flex"}
-            justifyContent={"center"}
-            alignItems={"center"}
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
             sx={{ display: { sm: "flex" } }}
           >
             <Box sx={{ marginX: 6, marginY: 5 }}>
@@ -108,7 +105,7 @@ function NavBar() {
             </Box>
           </Box>
 
-          <Box display={"flex"} justifyContent={"flex-start"}>
+          <Box display="flex" justifyContent="flex-start">
             <Button
               variant="contained"
               disableElevation
@@ -134,11 +131,11 @@ function NavBar() {
             paddingLeft: "5px",
             paddingTop: "22px",
           }}
-          display={"flex"}
-          justifyContent={"space-between"}
-          alignItems={"center"}
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
         >
-          <Box display={"flex"} justifyContent={"center"}>
+          <Box display="flex" justifyContent="center">
             <Typography
               sx={{
                 color: "#0E204E",
@@ -174,7 +171,7 @@ function NavBar() {
                   padding: 1,
                 }}
               >
-                <IconButton onClick={handleClose}>
+                <IconButton onClick={() => setIsDrawerOpen(false)}>
                   <CloseIcon />
                 </IconButton>
               </Box>
@@ -187,7 +184,7 @@ function NavBar() {
                   alignItems: "flex-end",
                 }}
               >
-                <MenuItem onClick={handleClose}>
+                <MenuItem onClick={() => setIsDrawerOpen(false)}>
                   <Link
                     href="#aboutPage"
                     underline="none"
@@ -204,7 +201,7 @@ function NavBar() {
                   </Link>
                 </MenuItem>
 
-                <MenuItem onClick={handleClose}>
+                <MenuItem onClick={() => setIsDrawerOpen(false)}>
                   <Link
                     href="#whatWeDoPage"
                     underline="none"
@@ -221,7 +218,7 @@ function NavBar() {
                   </Link>
                 </MenuItem>
 
-                <MenuItem onClick={handleClose}>
+                <MenuItem onClick={() => setIsDrawerOpen(false)}>
                   <Link
                     href="#projectPage"
                     underline="none"
@@ -237,6 +234,8 @@ function NavBar() {
                     Project
                   </Link>
                 </MenuItem>
+
+
               </Box>
             </Drawer>
           </Box>
