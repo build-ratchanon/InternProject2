@@ -7,7 +7,7 @@ import img1Mobile from "@/images/IMG1Mobile.png";
 
 function Page1() {
   return (
-    <Container maxWidth={false} sx={{ maxWidth: "1920px" }}>
+    <Container maxWidth={"xl"}>
       {/* Page1 */}
       <Grid
         container
@@ -32,30 +32,11 @@ function Page1() {
               pb: "14%",
             }}
           >
-            <Typography
-              sx={{
-                color: "#FFFFFF",
-                fontFamily: "Playfair Display",
-                fontSize: "clamp(1rem, 3.333vw, 64px)",
-                fontStyle: "normal",
-                fontWeight: 700,
-                lineHeight: "normal",
-              }}
-            >
+            <Typography variant="h2" color="#FFFFFF">
               Pineapple Island: GenZ and Millenial Abode
             </Typography>
 
-            <Typography
-              sx={{
-                color: "#FFFFFF",
-                fontFamily: "Manrope",
-                fontSize: "clamp(0.7rem, 1.042vw, 24px)",
-                fontStyle: "normal",
-                fontWeight: 400,
-                overflow: "auto",
-                marginTop: "20px",
-              }}
-            >
+            <Typography variant="h6" color="#FFFFFF" mt="4%">
               a community that gives you a taste of happiness, a place you’ll
               love to live and an opportunity to build a home.
             </Typography>
@@ -94,34 +75,12 @@ function Page1() {
             px="7px"
             pt="178px"
           >
-            <Typography
-              sx={{
-                color: "#FFFFFF",
-                fontFamily: "Playfair Display",
-                fontSize: "1.625rem",
-                fontStyle: "normal",
-                fontWeight: 700,
-                lineHeight: "normal",
-              }}
-            >
+            <Typography variant="h5" color="#FFFFFF">
               Pineapple Island: <br />
               GenZ and Millenial Abode
             </Typography>
 
-            <Typography
-              mb={4}
-              sx={{
-                alignItems: "center",
-                color: "#FFFFFF",
-                fontFamily: "Manrope",
-                fontSize: "0.875rem",
-                fontStyle: "normal",
-                fontWeight: 400,
-                lineHeight: "21px",
-                overflow: "auto",
-                marginTop: "20px",
-              }}
-            >
+            <Typography variant="subtitle2" color="#FFFFFF" mt={3} mb={4}>
               a community that gives you a taste of happiness, a place you’ll
               love to live and an opportunity to build a home.
             </Typography>
