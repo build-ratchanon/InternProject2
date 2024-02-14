@@ -78,7 +78,7 @@ function Page1() {
         alignItems="center"
         sx={{ display: { xs: "flex", md: "none" } }}
       >
-        <Grid display={"flex"} justifyContent={"center"} position={"relative"}>
+        <Grid display="flex" justifyContent="center" position="relative">
           <Image
             style={{ objectFit: "cover", filter: "brightness(55%)" }}
             src={img1Mobile}
