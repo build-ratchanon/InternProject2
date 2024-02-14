@@ -59,9 +59,9 @@ function Page1() {
         alignItems="center"
         sx={{ display: { xs: "flex", md: "none" } }}
       >
-        <Grid display="flex" justifyContent="center" position="relative">
+        <Grid item display="flex" justifyContent="center" position="relative" width="100%">
           <Image
-            style={{ objectFit: "cover", filter: "brightness(55%)" }}
+            style={{ objectFit: "cover", filter: "brightness(55%)", width: "97%" }}
             src={img1Mobile}
             alt="Image1 Mobile"
           />
@@ -72,7 +72,8 @@ function Page1() {
             alignItems="center"
             flexDirection="column"
             textAlign="center"
-            px="7px"
+            // px="7px"
+            px="3%"
             pt="178px"
           >
             <Typography variant="h5" color="#FFFFFF">
@@ -80,7 +81,11 @@ function Page1() {
               GenZ and Millenial Abode
             </Typography>
 
-            <Typography variant="subtitle2" color="#FFFFFF" mt={3} mb={4}>
+            <Typography
+              variant="subtitle2" color="#FFFFFF"
+              mt={3}
+              mb={4}
+            >
               a community that gives you a taste of happiness, a place you’ll
               love to live and an opportunity to build a home.
             </Typography>
