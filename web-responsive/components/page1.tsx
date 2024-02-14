@@ -1,90 +1,72 @@
-import styles from "@/styles/Home.module.css";
 import Image from "next/image";
 import React from "react";
-import {
-  Button,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Button, Container, Grid, Typography } from "@mui/material";
 
 import img1Desktop from "@/images/IMG1Desktop.png";
 import img1Mobile from "@/images/IMG1Mobile.png";
 
 function Page1() {
   return (
-    <Grid>
+    <Container maxWidth={false} sx={{ maxWidth: "1920px" }}>
       {/* Page1 */}
-
       <Grid
-        container //hole
-        // display={'flex'}
-        alignItems={"center"}
-        justifyContent={"center"}
-        right={0}
-        sx={{ display: { xs: "none", sm: "flex", md: "flex" } }}
+        container
+        alignItems="center"
+        sx={{ display: { xs: "none", md: "flex" } }}
       >
         <Grid
-          item //box
-          className={styles.box1}
+          item
+          xs={3.5}
           sx={{
-            // width: '35%',
-            // height: '55%',
-            backgroundColor: "#0E204E",
-            position: "absolute",
-            left: "5%",
             zIndex: 1,
-            px: "4%",
-            py: "4%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            overflow: "hidden",
+            pl: "4%",
           }}
         >
-          <Grid>
-            <Typography variant="h3" className={styles.title1}>
-              Pineapple Island: <br />
-              GenZ and Millenial <br />
-              Abode
+          <Grid
+            sx={{
+              backgroundColor: "#0E204E",
+              width: "min(40.7vw, 790px)",
+              pl: "19%",
+              pr: "10%",
+              pt: "17%",
+              pb: "14%",
+            }}
+          >
+            <Typography
+              sx={{
+                color: "#FFFFFF",
+                fontFamily: "Playfair Display",
+                fontSize: "clamp(1rem, 3.333vw, 64px)",
+                fontStyle: "normal",
+                fontWeight: 700,
+                lineHeight: "normal",
+              }}
+            >
+              Pineapple Island: GenZ and Millenial Abode
             </Typography>
 
             <Typography
-              variant="subtitle1"
-              className={styles.subtitle1}
-              fontSize={20}
-              sx={{ display: { lg: "none", xl: "flex" } }}
+              sx={{
+                color: "#FFFFFF",
+                fontFamily: "Manrope",
+                fontSize: "clamp(0.7rem, 1.042vw, 24px)",
+                fontStyle: "normal",
+                fontWeight: 400,
+                overflow: "auto",
+                marginTop: "20px",
+              }}
             >
               a community that gives you a taste of happiness, a place you’ll
-              love to <br />
-              live and an opportunity to build a home.
-            </Typography>
-
-            <Typography
-              variant="subtitle1"
-              className={styles.subtitle1}
-              sx={{ display: { lg: "flex", xl: "none" } }}
-            >
-              a community that gives you a taste of happiness, a place you’ll
-              love to <br />
-              live and an opportunity to build a home.
+              love to live and an opportunity to build a home.
             </Typography>
           </Grid>
         </Grid>
 
-        <Grid
-          item //pic
-          sx={{
-            width: "75%",
-            position: "relative",
-            right: "-12.9%",
-          }}
-        >
+        <Grid item xs={8.5}>
           <Image
-            className={styles.img1D}
+            style={{ maxWidth: "70.3vw", height: "auto", position: "relative" }}
             src={img1Desktop}
             alt="Image1 Desktop"
-            // width={1075}
-            // height={717}
           />
         </Grid>
       </Grid>
@@ -92,58 +74,84 @@ function Page1() {
       {/* Page1 Mobile */}
       <Grid
         container
-        sx={{ display: { xs: "flex", sm: "none", md: "none" } }}
-        justifyContent={"center"}
-        alignItems={"center"}
-        position={"relative"}
+        justifyContent="center"
+        alignItems="center"
+        sx={{ display: { xs: "flex", md: "none" } }}
       >
-        <Grid>
+        <Grid display={"flex"} justifyContent={"center"} position={"relative"}>
           <Image
-            className={styles.img1M}
+            style={{ objectFit: "cover", filter: "brightness(55%)" }}
             src={img1Mobile}
             alt="Image1 Mobile"
           />
-        </Grid>
 
-        <Grid
-          position={"absolute"}
-          px={5}
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          flexDirection={"column"}
-        >
-          <Typography
-            className={styles.title1}
-            fontSize={24}
-            textAlign={"center"}
+          <Grid
+            position="absolute"
+            display="flex"
+            alignItems="center"
+            flexDirection="column"
+            textAlign="center"
+            px="7px"
+            pt="178px"
           >
-            Pineapple Island: <br />
-            GenZ and Millenial Abode
-          </Typography>
+            <Typography
+              sx={{
+                color: "#FFFFFF",
+                fontFamily: "Playfair Display",
+                fontSize: "1.625rem",
+                fontStyle: "normal",
+                fontWeight: 700,
+                lineHeight: "normal",
+              }}
+            >
+              Pineapple Island: <br />
+              GenZ and Millenial Abode
+            </Typography>
 
-          <Typography className={styles.subtitle1} textAlign={"center"} mb={4}>
-            a community that gives you a taste of happiness, a place you’ll love
-            to <br />
-            live and an opportunity to build a home.
-          </Typography>
+            <Typography
+              mb={4}
+              sx={{
+                alignItems: "center",
+                color: "#FFFFFF",
+                fontFamily: "Manrope",
+                fontSize: "0.875rem",
+                fontStyle: "normal",
+                fontWeight: 400,
+                lineHeight: "21px",
+                overflow: "auto",
+                marginTop: "20px",
+              }}
+            >
+              a community that gives you a taste of happiness, a place you’ll
+              love to live and an opportunity to build a home.
+            </Typography>
 
-          <Button
-            variant="contained"
-            disableElevation
-            href="#inTouchPage"
-            sx={{
-              fontSize: "13px",
-              fontWeight: "400",
-              fontStyle: "normal",
-            }}
-            style={{ background: "#FFF", color: "#0E204E" }}
-          >
-            Get in Touch
-          </Button>
+            <Button
+              variant="contained"
+              disableElevation
+              href="#inTouchPage"
+              sx={{
+                textTransform: "none",
+                fontFamily: "Lato",
+                fontSize: "16px",
+                fontWeight: 700,
+                fontStyle: "normal",
+                padding: 0,
+                paddingY: "6px",
+              }}
+              style={{
+                background: "#FFF",
+                color: "#0E204E",
+                width: "127px",
+                borderRadius: 5,
+              }}
+            >
+              Get in Touch
+            </Button>
+          </Grid>
         </Grid>
       </Grid>
-    </Grid>
+    </Container>
   );
 }
 
