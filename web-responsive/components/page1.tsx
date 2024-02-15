@@ -55,13 +55,11 @@ function Page1() {
       {/* Page1 Mobile */}
       <Grid
         container
-        justifyContent="center"
-        alignItems="center"
         sx={{ display: { xs: "flex", md: "none" } }}
       >
-        <Grid item display="flex" justifyContent="center" position="relative" width="100%">
+        <Grid item display="flex" justifyContent="center" alignItems="center" position="relative" width="100%" px="1.2%">
           <Image
-            style={{ objectFit: "cover", filter: "brightness(55%)", width: "97%" }}
+            style={{ objectFit: "cover", filter: "brightness(55%)", width: "min(100%, 550px)", height: "auto" }}
             src={img1Mobile}
             alt="Image1 Mobile"
           />
@@ -74,7 +72,9 @@ function Page1() {
             textAlign="center"
             // px="7px"
             px="3%"
-            pt="178px"
+            // pt="178px"
+            // pt="52%"
+            maxWidth= "550px"
           >
             <Typography variant="h5" color="#FFFFFF">
               Pineapple Island: <br />

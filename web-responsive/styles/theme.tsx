@@ -22,7 +22,9 @@ const theme = createTheme({
     h5: {
       fontFamily: "Playfair Display",
       fontWeight: 700,
-      fontSize: "1.625rem", //26px
+      // fontSize: "1.625rem", //26px
+      fontSize: "clamp(1.625rem, -0.25rem + 8vw, 2.5rem);",
+      // fontSize: "clamp(1.625rem, -1.225rem + 12.2vw, 2.5rem)",
       fontStyle: "normal",
       lineHeight: "normal",
     },
@@ -36,7 +38,8 @@ const theme = createTheme({
     subtitle2: {
       fontFamily: "Manrope",
       fontWeight: 400,
-      fontSize: "0.875rem", //14px 0.875rem
+      // fontSize: "0.875rem", //14px 0.875rem
+      fontSize: "clamp(0.875rem, 0.0714rem + 3.4286vw, 1.25rem)",
       fontStyle: "normal",
       lineHeight: "170%",
     },
