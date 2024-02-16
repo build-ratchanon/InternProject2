@@ -17,7 +17,7 @@ function Page2() {
         display="flex"
         alignItems="center"
         justifyContent="center"
-        sx={{ display: { xs: "none", sm: "none ", md: "flex" } }}
+        sx={{ display: { xs: "none", md: "flex" } }}
         my="13.4%"
         px="8.8%"
       >
@@ -112,7 +112,7 @@ function Page2() {
       {/* Page2 Mobile */}
       <Grid
         container
-        sx={{ display: { xs: "flex", sm: "flex", md: "none" } }}
+        sx={{ display: { xs: "flex", md: "none" } }}
         justifyContent="center"
         alignItems="center"
         // position='relative'
