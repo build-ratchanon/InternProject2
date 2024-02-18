@@ -1,69 +1,102 @@
 import styles from "@/styles/Home.module.css";
 import Image from "next/image";
 import React from "react";
-import { Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
+import Carousel from "react-bootstrap/Carousel";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import img2Desktop from "@/images/IMG2Desktop.png";
 import img2Mobile from "@/images/IMG2Mobile.png";
 
 function Page2() {
   return (
-    <Grid id='aboutPage'>
+    <Container id="aboutPage" maxWidth={false} sx={{ maxWidth: "1920px" }}>
       {/* Page 2 */}
       <Grid
         container //hole
-        display={"flex"}
-        alignItems={"center"}
-        justifyContent={"center"}
-        sx={{ display: { xs: "none", sm: "none ", md: "flex" } }}
-        my={"10%"}
-        px={"10%"}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        sx={{ display: { xs: "none", md: "flex" } }}
+        my="13.4%"
+        px="8.8%"
       >
-        <Grid width={"23%"}>
-          <Typography variant="h3" className={styles.title2}>
+        <Grid item xs={3}>
+          <Typography
+            variant="h3"
+            color={"#0E204E"}
+            fontFamily="Playfair Display"
+            fontWeight={700}
+            fontSize={"clamp(1.5rem, -0.4853rem + 3.5294vw, 3.75rem);"}
+            lineHeight="134%"
+          >
             About <br /> Pineapple <br /> Island
           </Typography>
         </Grid>
 
-        <Grid item display={"flex"} width={"77%"}>
-          <Image
-            src={img2Desktop}
-            alt="Image2 Desktop"
-            className={styles.img2D}
-          />
+        <Grid container xs={9} sx={{ display: "flex" }}>
+          <Grid item xs={7.5}>
+            <Carousel>
+                <Carousel.Item>
+                  <Image
+                    src={img2Desktop}
+                    alt="Image2 Desktop"
+                    style={{width: "100%", height: "auto"}}
+                    />
+                </Carousel.Item>
 
-          <Grid
-            item
-            className={styles.subtitle2}
+                <Carousel.Item>
+                  <Image
+                    src={img2Desktop}
+                    alt="Image2 Desktop"
+                    style={{width: "100%", height: "auto"}}
+                  />
+                </Carousel.Item>
+                
+                <Carousel.Item>
+                  <Image
+                    src={img2Desktop}
+                    alt="Image2 Desktop"
+                    style={{width: "100%", height: "auto"}}
+                  />
+                </Carousel.Item>
+
+                <Carousel.Item>
+                  <Image
+                    src={img2Desktop}
+                    alt="Image2 Desktop"
+                    style={{width: "100%", height: "auto"}}
+                  />
+                </Carousel.Item>
+
+                <Carousel.Item>
+                  <Image
+                    src={img2Desktop}
+                    alt="Image2 Desktop"
+                    style={{width: "100%", height: "auto"}}
+                  />
+                </Carousel.Item>
+              </Carousel>
+          </Grid>
+
+          <Grid 
+            item 
+            xs
             sx={{
               background: "#0E204E",
               color: "#FFF",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              px: "5%",
+              px: "5.1%",
+              py: "5.35%",
             }}
           >
             <Typography
-              className={styles.subtitle2}
               variant="subtitle1"
-              fontSize={18}
-              p={4}
-              sx={{ display: { lg: "none", xl: "flex" } }}
-            >
-              Pineapple Island is the most sought-after community in Ibadan that
-              values and puts the needs of their clients first. It is a
-              territory with loft complexes that creates a country life and
-              homely feeling that is integrated with industrial development. A
-              perfect, professional built abode that gives you the true taste of
-              beauty and happiness.
-            </Typography>
-
-            <Typography
-              className={styles.subtitle2}
-              variant="subtitle1"
-              fontSize={14}
-              sx={{ display: { lg: "flex", xl: "none" } }}
+              fontFamily="Manrope"
+              fontWeight={400}
+              fontSize={"clamp(0.625rem, 0.0735rem + 0.9804vw, 1.25rem)"}
             >
               Pineapple Island is the most sought-after community in Ibadan that
               values and puts the needs of their clients first. It is a
@@ -78,37 +111,60 @@ function Page2() {
 
       {/* Page2 Mobile */}
       <Grid
-        sx={{ display: { xs: "flex", sm: "flex", md: "none" } }}
-        justifyContent={"center"}
-        alignItems={"center"}
-        // position={'relative'}
-        flexDirection={"column"}
+        container
+        sx={{ display: { xs: "flex", md: "none" } }}
+        justifyContent="center"
+        alignItems="center"
+        // position='relative'
+        flexDirection="column"
       >
-        <Grid>
-          <Typography className={styles.title2M} pt={"20%"} pb={"5%"}>
+        <Grid textAlign="center">
+          <Typography
+            variant="h4"
+            fontFamily="Playfair Display"
+            fontWeight={700}
+            fontSize="clamp(1.5rem, -0.1071rem + 6.8571vw, 2.25rem)"
+            pt="30%"
+            pb="13%"
+          >
             About <br /> Pineapple Island
           </Typography>
         </Grid>
 
         <Grid
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          position={"relative"}
+          item
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          position="relative"
         >
           <Image
             src={img2Mobile}
             alt="Image2 Mobile"
-            className={styles.img2M}
+            style={{
+              objectFit: "cover",
+              filter: "brightness(55%)",
+              width: "min(89vw, 550px)",
+              height: "auto",
+            }}
           />
 
           <Grid
-            position={"absolute"}
-            display={"flex"}
-            textAlign={"center"}
-            px={6}
+            position="absolute"
+            display="flex"
+            textAlign="center"
+            px={7}
+            py={5}
           >
-            <Typography className={styles.subtitle2}>
+            <Typography
+              variant="subtitle1"
+              fontFamily="Lato"
+              fontWeight={400}
+              color="#FFFFFF"
+              fontSize="clamp(0.8125rem, -0.4918rem + 6.5217vw, 1.75rem)"
+              fontStyle="normal"
+              lineHeight="160%"
+            >
               Pineapple Island is the most sought-after community in Ibadan that
               values and puts the needs of their clients first. It is a
               territory with loft complexes that creates a country life and
@@ -119,7 +175,7 @@ function Page2() {
           </Grid>
         </Grid>
       </Grid>
-    </Grid>
+    </Container>
   );
 }
 
